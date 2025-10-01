@@ -1,0 +1,100 @@
+/* Base Styles for Readability and Structure */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    /* REMOVED: display: grid; and justify-items: center; 
+       to allow floating elements to work correctly for the layout */
+}
+
+header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* W02 ASSIGNMENT: MAIN & IMAGE STYLES */
+main {
+    max-width: 840px; /* Required max-width */
+    padding: 20px;
+    /* Since aside is floated, main will automatically expand to fill remaining space */
+}
+
+main img { /* TARGETS ONLY THE PROFILE IMAGE inside <main> - MORE EXCLUSIVE */
+    width: 150px;
+    height: auto;
+    border: 1px solid #777;
+    padding: 2px;
+    box-shadow: 0 0 30px #333;
+    float: right; /* Keeps the profile pic on the right, allowing text to wrap */
+    margin: 0 0 10px 10px;
+}
+
+h1 {
+    color: navy;
+}
+
+/* W02 ASSIGNMENT: PARAGRAPH PADDING */
+p { 
+    padding: 0; /* Required padding change to 0 */
+}
+
+/* List/Box Styles - assuming standard box class */
+.box {
+    margin: 18px 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background-color: #f4f4f4;
+}
+
+/* W02 ASSIGNMENT: ASIDE ELEMENT STYLES */
+aside {
+    width: 20rem; /* Required width */
+    margin: 1rem; /* Required margin */
+    border: 1px solid rgb(0 0 0 / 0.2); /* Required border with alpha transparency */
+    padding: 1rem; /* Required padding */
+    background-color: #eee; /* Light background */
+    color: #333; /* Dark text color */
+    text-align: center; /* Center the content inside */
+    
+    /* LAYOUT FIX: Pushes the aside box to the right side of the main content area */
+    float: right; 
+}
+
+aside img { /* TARGETS IMAGE INSIDE <aside> */
+    width: 200px; /* Required width */
+    height: auto; /* Required to preserve aspect ratio */
+}
+
+/* W02 ASSIGNMENT: FOOTER STYLES */
+footer {
+    width: 100%;
+    margin-top: 15px; /* Required top margin */
+    border-top: 1px solid #000; /* Required top border */
+    text-align: center; /* Required text alignment */
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    
+    /* LAYOUT FIX: Ensures the footer sits below all floated content */
+    clear: both; 
+}
