@@ -8,8 +8,6 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 0;
-    /* REMOVED: display: grid; and justify-items: center; 
-       to allow floating elements to work correctly for the layout */
 }
 
 header {
@@ -20,11 +18,20 @@ header {
     text-align: center;
 }
 
+/* FIX: nav rule with required background-color and padding */
+nav {
+    background-color: #333; 
+    padding: 5px; 
+    text-align: center; 
+}
+
+/* FIX: nav a rule with required color, padding, and display: block */
 nav a {
     color: white;
     margin: 0 10px;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 5px 10px; 
+    display: block; /* REQUIRED by audit */
 }
 
 nav a:hover {
@@ -34,35 +41,28 @@ nav a:hover {
 
 /* W02 ASSIGNMENT: MAIN & IMAGE STYLES */
 main {
-    max-width: 840px; /* Required max-width */
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 840px; 
     padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 20rem;
-    gap: 1rem;
-    align-items: start;
 }
-main img { /* TARGETS ONLY THE PROFILE IMAGE inside <main> - MORE EXCLUSIVE */
+
+main img { 
     width: 150px;
     height: auto;
     border: 1px solid #777;
     padding: 2px;
     box-shadow: 0 0 30px #333;
+    float: right; 
     margin: 0 0 10px 10px;
-    float: right; /* Keeps the profile pic on the right, allowing text to wrap */
 }
 
 h1 {
     color: navy;
 }
 
-/* W02 ASSIGNMENT: PARAGRAPH PADDING */
 p { 
-    padding: 0; /* Required padding change to 0 */
+    padding: 0; 
 }
 
-/* List/Box Styles - assuming standard box class */
 .box {
     margin: 18px 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -70,29 +70,32 @@ p {
     background-color: #f4f4f4;
 }
 
+/* W02 ASSIGNMENT: ASIDE ELEMENT STYLES */
 aside {
-    width: 20rem; /* Required width */
-    margin: 1rem 0 1rem 1rem; /* Adjust margin for grid gap */
-    border: 1px solid rgba(0, 0, 0, 0.2); /* Required border with alpha transparency */
-    padding: 1rem; /* Required padding */
-    background-color: #eee; /* Light background */
-    color: #333; /* Dark text color */
-    text-align: center; /* Center the content inside */
-    /* Removed float, handled by grid */
+    width: 20rem; 
+    margin: 1rem; 
+    border: 1px solid rgb(0 0 0 / 0.2); 
+    padding: 1rem; 
+    background-color: #eee; 
+    color: #333; 
+    text-align: center; 
+    float: right; 
 }
 
-aside img { /* TARGETS IMAGE INSIDE <aside> */
-    width: 200px; /* Required width */
-    height: auto; /* Required to preserve aspect ratio */
+/* aside img rule is now clean and separate */
+aside img { 
+    width: 200px; 
+    height: auto; 
+}
+
+/* W02 ASSIGNMENT: FOOTER STYLES is now clean and separate */
 footer {
     width: 100%;
-    margin-top: 15px; /* Required top margin */
-    border-top: 1px solid #000; /* Required top border */
-    text-align: center; /* Required text alignment */
+    margin-top: 15px; 
+    border-top: 1px solid #000; 
+    text-align: center; 
     padding: 10px 0;
     background-color: #333;
     color: white;
-    /* Removed clear: both; not needed with Flexbox */
-    clear: both; /* LAYOUT FIX: Ensures the footer sits below all floated content */
-}   clear: both; 
+    clear: both; 
 }
