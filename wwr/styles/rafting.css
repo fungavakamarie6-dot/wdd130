@@ -1,0 +1,103 @@
+/* W03 Rafting Site - About Us Page CSS */
+
+/* 1. CSS VARIABLES (Update with your own colors/fonts!) */
+:root {
+  --primary-color: #055a05; /* Forest Green */
+  --secondary-color: #f4a261; /* Warm Sand */
+  --accent1-color: #264653; /* Dark Slate Blue */
+  --accent2-color: #e9c46a; /* Light Golden Yellow */
+  --heading-font: "Georgia", serif;
+  --body-font: Arial, Helvetica, sans-serif;
+}
+
+/* 2. UNIVERSAL BOX-MODEL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. BODY & BASE STYLES */
+body {
+  font-family: var(--body-font);
+  color: var(--accent1-color); /* Set base text color */
+}
+
+/* 4. PAGE WIDTH & CENTER (Targets header, main, and footer simultaneously) */
+header, main, footer {
+  max-width: 840px; /* Limit width */
+  margin: 0 auto;   /* Center content horizontally */
+}
+
+/* 5. HEADING STYLES */
+h1, h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+}
+
+/* 6. BASE PADDING & MARGIN */
+nav, p, section, article {
+  margin: 16px;
+  padding: 8px;
+}
+
+/* 7. HERO SECTION OVERLAY (CRITICAL STYLING) */
+.hero {
+  position: relative; /* Container for absolute positioning */
+}
+
+.hero-img { /* Targets the hero image specifically */
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+.hero h1 {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  opacity: 0.7; /* Adds a slight transparent background */
+  background-color: var(--accent1-color);
+  color: #fff; /* White text for contrast */
+  margin: 0; /* Override the base margin */
+}
+
+.hero article {
+  position: absolute;
+  top: 150px; /* Adjust this to fit your image */
+  left: 50px; /* Adjust positioning */
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border-radius: 5px;
+  max-width: 300px;
+}
+
+.hero article img {
+  float: right;
+  width: 125px; /* Required width */
+  margin-left: 10px; /* Space between image and text */
+  border: 1px solid var(--accent1-color);
+  box-shadow: 2px 2px 5px var(--accent1-color);
+}
+
+/* 8. FOOTER STYLES */
+footer {
+    display: flex; /* Use flex to align content */
+    justify-content: space-between; /* Space out the content */
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+    padding: 20px;
+}
+
+.socialmedia a {
+    text-decoration: none; /* Remove underline from social media links */
+    margin-left: 10px;
+}
+
+.socialmedia img {
+    width: 30px; /* Sizing the social media icons */
+    height: 30px;
+}
