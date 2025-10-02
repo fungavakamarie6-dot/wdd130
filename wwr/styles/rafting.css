@@ -23,10 +23,29 @@ body {
   color: var(--accent1-color); /* Set base text color */
 }
 
-/* 4. PAGE WIDTH & CENTER (Targets header, main, and footer simultaneously) */
-header, main, footer {
-  max-width: 840px; /* Limit width */
-  margin: 0 auto;   /* Center content horizontally */
+/* 4. PAGE WIDTH & CENTER */
+main {
+  max-width: 840px;   /* Limit width for main content */
+  margin: 0 auto;     /* Center content horizontally */
+}
+
+/* NEW: Apply width/center to footer as well */
+footer {
+  /* Existing properties will go here... */
+  max-width: 840px; 
+  margin: 0 auto; 
+}
+
+/* HEADER: Implement CSS Grid (W04 REQUIREMENT) */
+header {
+  max-width: 840px; 
+  margin: 0 auto; 
+  
+  /* W04 GRID LAYOUT: Logo (auto) and Nav (rest of space 1fr) */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center; /* Vertically centers logo and nav within the header */
+  padding: 10px; /* Add some padding */
 }
 
 /* 5. HEADING STYLES */
@@ -41,9 +60,19 @@ nav, p, section, article {
   padding: 8px;
 }
 
-/* 7. HERO SECTION OVERLAY (CRITICAL STYLING) */
-.hero {
-  position: relative; /* Container for absolute positioning */
+/* 7. NAVIGATION: Implement CSS Flex (W04 REQUIREMENT) */
+nav ul {
+  list-style: none;     /* Removes the default bullet points */
+  display: flex;        /* Turns the container into a flex container */
+  justify-content: space-around; /* Spreads the links out evenly */
+  margin: 0;            /* Ensures no extra margin interferes with the layout */
+  padding: 0;           /* Ensures no extra padding interferes with the layout */
+}
+
+nav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  /* Add other styles here */
 }
 
 .hero-img { /* Targets the hero image specifically */
@@ -100,4 +129,30 @@ footer {
 .socialmedia img {
     width: 30px; /* Sizing the social media icons */
     height: 30px;
+}
+/* 9. ADVENTURE GALLERY: Implement CSS Flex for 5-image layout (W04 REQUIREMENT) */
+.adventure-gallery {
+  display: flex; 
+  flex-flow: row wrap; /* Allows wrapping if the screen is small */
+  justify-content: space-between; /* Spreads the figures out */
+  gap: 10px;
+  padding: 20px;
+}
+
+.adventure-gallery figure {
+  flex: 1 1 18%; /* Allows each figure to take roughly 1/5th of the space */
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+}
+
+.adventure-gallery img {
+  width: 100%; 
+  height: auto;
+  border: 1px solid var(--accent1-color);
+}
+
+.adventure-gallery figcaption {
+  font-size: smaller;
+  padding: 5px 0;
 }
