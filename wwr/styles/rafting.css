@@ -25,8 +25,8 @@ body {
 
 /* 4. PAGE WIDTH & CENTER */
 main {
-  max-width: 840px;   /* Limit width for main content */
-  margin: 0 auto;     /* Center content horizontally */
+max-width: 840px;   /* Limit width for main content */
+margin: 0 auto;     /* Center content horizontally */
 }
 
 /* NEW: Apply width/center to footer as well */
